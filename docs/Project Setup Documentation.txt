@@ -1,0 +1,61 @@
+Project Setup Documentation
+Date: June 2, 2026
+Project: Student Performance & Attendance Dashboard
+Goal: Build a portfolio project demonstrating SQL, Python/ETL, and Tableau skills for a Data Analyst role in an educational setting.
+
+Environment
+
+OS: Windows
+Python: 3.11.7 (via Anaconda)
+Key libraries: pandas, requests, openpyxl, jupyter (all pre-installed with Anaconda)
+
+
+Command Line Steps
+1. Verified Python and pip:
+	python --version
+	pip --version
+2. Confirmed required libraries were installed:
+	pip install pandas requests openpyxl jupyter
+3. Created project folder structure:
+	mkdir student_performance_project
+	cd student_performance_project
+	mkdir data scripts sql
+4. Created docs folder:
+	mkdir C:\Users\saahi\student_performance_project\docs
+5. Verified data files were in place:
+	dir C:\Users\saahi\student_performance_project\data
+
+Project Folder Structure
+student_performance_project/
+├── data/          → raw CSV files from NCES
+├── scripts/       → Python/Jupyter notebooks
+├── sql/           → SQL query files
+└── docs/          → documentation and data dictionaries
+
+Data Source:
+NCES Common Core of Data (CCD)
+
+URL: https://nces.ed.gov/ccd/files.asp
+School year: 2024–25
+Files downloaded (CSV format):
+
+FileDescriptionccd_sch_2425_public_elem_sec_data.csvSchool-level membership dataccd_lea_2425_distr_membership.csvDistrict-level membership dataccd_sea_2425_state_nonfiscal_pub_elem_sec_ed_data.csvState-level nonfiscal data
+
+.sas7bdat files were also downloaded but are not used (SAS format, duplicate of CSV data)
+
+
+Decisions Made
+
+Filtering all data to Illinois only to keep file sizes manageable (school CSV is 2.3GB unfiltered)
+Using Jupyter Notebook for the Python ETL script for readability and step-by-step documentation
+Target output: clean CSVs loaded into SQLite for querying, then connected to Tableau Public for visualization
+
+
+Next Steps
+
+ Open Jupyter Notebook and write ETL cleaning script
+ Filter data to Illinois, clean nulls, standardize columns
+ Load clean data into SQLite
+ Write SQL queries
+ Build Tableau dashboard
+ Publish to Tableau Public and GitHub
